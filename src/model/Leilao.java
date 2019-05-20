@@ -1,13 +1,15 @@
 package model;
 
+import java.util.Date;
+
 public class Leilao {
 
 	private int id_leilao, id_estado_leilao, id_produto, id_usuario, duracao;
-	private String data_inicio;
+	private Date data_inicio, data_fim;
 	private double valor_inicial, valor_atual, lance_padrao;
 	
-	public Leilao(int id_leilao, int id_estado_leilao, int id_produto, int id_usuario, int duracao, String data_inicio,
-			double valor_inicial, double valor_atual, double lance_padrao) {
+	public Leilao(int id_leilao, int id_estado_leilao, int id_produto, int id_usuario, int duracao, Date data_inicio,
+			Date data_fim, double valor_inicial, double valor_atual, double lance_padrao) {
 		super();
 		this.id_leilao = id_leilao;
 		this.id_estado_leilao = id_estado_leilao;
@@ -15,11 +17,11 @@ public class Leilao {
 		this.id_usuario = id_usuario;
 		this.duracao = duracao;
 		this.data_inicio = data_inicio;
+		this.data_fim = data_fim;
 		this.valor_inicial = valor_inicial;
 		this.valor_atual = valor_atual;
 		this.lance_padrao = lance_padrao;
 	}
-	
 	public int getId_leilao() {
 		return id_leilao;
 	}
@@ -50,11 +52,17 @@ public class Leilao {
 	public void setDuracao(int duracao) {
 		this.duracao = duracao;
 	}
-	public String getData_inicio() {
+	public Date getData_inicio() {
 		return data_inicio;
 	}
-	public void setData_inicio(String data_inicio) {
+	public void setData_inicio(Date data_inicio) {
 		this.data_inicio = data_inicio;
+	}
+	public Date getData_fim() {
+		return data_fim;
+	}
+	public void setData_fim(Date data_fim) {
+		this.data_fim = data_fim;
 	}
 	public double getValor_inicial() {
 		return valor_inicial;
