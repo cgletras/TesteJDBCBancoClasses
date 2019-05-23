@@ -1,7 +1,9 @@
 package model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Usuario implements Serializable{
 	
@@ -11,6 +13,9 @@ public class Usuario implements Serializable{
 	private String nome, email, senha; 
 	private Date dataNascimento;
 	private boolean ativo;
+	
+	private List<Produto> produtos = new ArrayList<>();
+	private List<Leilao> leiloes = new ArrayList<>();
 	
 	public Usuario() {
 		super();
@@ -73,9 +78,14 @@ public class Usuario implements Serializable{
 	public void setAtivo(boolean ativo) {
 		this.ativo = ativo;
 	}
+	
+	public List<Produto> getProdutos() {
+		// Construir uma função para buscar Produtos no banco
+		return produtos;
+	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	public List<Leilao> getLeiloes() {
+		return leiloes;
 	}
 
 	@Override
@@ -108,6 +118,8 @@ public class Usuario implements Serializable{
 		return "Usuario [idUsuario=" + idUsuario + ", nome=" + nome + ", email=" + email + ", senha=" + senha
 				+ ", dataNascimento=" + dataNascimento + ", ativo=" + ativo + "]";
 	}
+	
+	
 }
 
 
