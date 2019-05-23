@@ -1,76 +1,112 @@
 package model;
 
-public class Produto {
+import java.io.Serializable;
 
-	private int id_produto, id_estado_produto, id_usuario, numero_paginas, peso;
-	private String editora,	titulo,	formato_do_quadrinho, capa_imagem;
+public class Produto implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
+	private int idProduto, numeroPaginas, peso;
+	private String editora,	titulo,	formatoDoQuadrinho, capaImagem;
+	private EstadoProduto estado;
 	
-	public Produto(int id_produto, int id_estado_produto, int id_usuario, int numero_paginas, int peso, String editora,
-			String titulo, String formato_do_quadrinho, String capa_imagem) {
+	private Usuario usuario;
+	
+	public Produto() {
 		super();
-		this.id_produto = id_produto;
-		this.id_estado_produto = id_estado_produto;
-		this.id_usuario = id_usuario;
-		this.numero_paginas = numero_paginas;
+	}
+
+	public Produto(int idProduto, int numeroPaginas, int peso, String editora, String titulo, String formatoDoQuadrinho,
+			String capaImagem, EstadoProduto estado, Usuario usuario) {
+		super();
+		this.idProduto = idProduto;
+		this.numeroPaginas = numeroPaginas;
 		this.peso = peso;
 		this.editora = editora;
 		this.titulo = titulo;
-		this.formato_do_quadrinho = formato_do_quadrinho;
-		this.capa_imagem = capa_imagem;
+		this.formatoDoQuadrinho = formatoDoQuadrinho;
+		this.capaImagem = capaImagem;
+		this.estado = estado;
+		this.usuario = usuario;
 	}
-	
-	public int getId_produto() {
-		return id_produto;
+
+	public int getIdProduto() {
+		return idProduto;
 	}
-	public void setId_produto(int id_produto) {
-		this.id_produto = id_produto;
+
+	public void setIdProduto(int idProduto) {
+		this.idProduto = idProduto;
 	}
-	public int getId_estado_produto() {
-		return id_estado_produto;
+
+	public int getNumeroPaginas() {
+		return numeroPaginas;
 	}
-	public void setId_estado_produto(int id_estado_produto) {
-		this.id_estado_produto = id_estado_produto;
+
+	public void setNumeroPaginas(int numeroPaginas) {
+		this.numeroPaginas = numeroPaginas;
 	}
-	public int getId_usuario() {
-		return id_usuario;
-	}
-	public void setId_usuario(int id_usuario) {
-		this.id_usuario = id_usuario;
-	}
-	public int getNumero_paginas() {
-		return numero_paginas;
-	}
-	public void setNumero_paginas(int numero_paginas) {
-		this.numero_paginas = numero_paginas;
-	}
+
 	public int getPeso() {
 		return peso;
 	}
+
 	public void setPeso(int peso) {
 		this.peso = peso;
 	}
+
 	public String getEditora() {
 		return editora;
 	}
+
 	public void setEditora(String editora) {
 		this.editora = editora;
 	}
+
 	public String getTitulo() {
 		return titulo;
 	}
+
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
-	public String getFormato_do_quadrinho() {
-		return formato_do_quadrinho;
+
+	public String getFormatoDoQuadrinho() {
+		return formatoDoQuadrinho;
 	}
-	public void setFormato_do_quadrinho(String formato_do_quadrinho) {
-		this.formato_do_quadrinho = formato_do_quadrinho;
+
+	public void setFormatoDoQuadrinho(String formatoDoQuadrinho) {
+		this.formatoDoQuadrinho = formatoDoQuadrinho;
 	}
-	public String getCapa_imagem() {
-		return capa_imagem;
+
+	public String getCapaImagem() {
+		return capaImagem;
 	}
-	public void setCapa_imagem(String capa_imagem) {
-		this.capa_imagem = capa_imagem;
-	}	
+
+	public void setCapaImagem(String capaImagem) {
+		this.capaImagem = capaImagem;
+	}
+
+	public EstadoProduto getEstado() {
+		return estado;
+	}
+
+	public void setEstado(EstadoProduto estado) {
+		this.estado = estado;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	@Override
+	public String toString() {
+		return "Produto [idProduto=" + idProduto + ", numeroPaginas=" + numeroPaginas + ", peso=" + peso + ", editora="
+				+ editora + ", titulo=" + titulo + ", formatoDoQuadrinho=" + formatoDoQuadrinho + ", capaImagem="
+				+ capaImagem + ", estado=" + estado + ", usuario=" + usuario + "]";
+	}
+
 }

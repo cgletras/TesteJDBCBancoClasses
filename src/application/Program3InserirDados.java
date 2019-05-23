@@ -27,7 +27,7 @@ public class Program3InserirDados {
 		+"VALUES" 
 		+"(?, ?, ?)");
 		
-		st.setInt(1, 5);
+		st.setInt(1, 4);
 		st.setString(2, "Stein Holding");
 		st.setString(3, "SHolds");
 		// inserindo datas no SQL

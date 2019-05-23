@@ -1,36 +1,37 @@
 package model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Usuario {
+public class Usuario implements Serializable{
 	
-	private int id_usuario;
+	private static final long serialVersionUID = 1L;
+	
+	private Integer idUsuario;
 	private String nome, email, senha; 
-	private Date data_nascimento;
-	private Estado estado;
+	private Date dataNascimento;
+	private boolean ativo;
 	
-	public Usuario(int id_usuario, String nome, String email, String senha, Date data_nascimento, Estado estado) {
+	public Usuario() {
 		super();
-		this.id_usuario = id_usuario;
+	}
+
+	public Usuario(Integer idUsuario, String nome, String email, String senha, Date dataNascimento, boolean ativo) {
+		super();
+		this.idUsuario = idUsuario;
 		this.nome = nome;
 		this.email = email;
 		this.senha = senha;
-		this.data_nascimento = data_nascimento;
-		this.estado = estado;
-	}
-	
-	public Usuario(String nome, Estado estado) {
-		super();
-		this.nome = nome;
-		this.estado = estado;
+		this.dataNascimento = dataNascimento;
+		this.ativo = ativo;
 	}
 
-	public int getId_usuario() {
-		return id_usuario;
+	public Integer getIdUsuario() {
+		return idUsuario;
 	}
 
-	public void setId_usuario(int id_usuario) {
-		this.id_usuario = id_usuario;
+	public void setIdUsuario(Integer idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 
 	public String getNome() {
@@ -57,20 +58,55 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public Date getData_nascimento() {
-		return data_nascimento;
+	public Date getDataNascimento() {
+		return dataNascimento;
 	}
 
-	public void setData_nascimento(Date data_nascimento) {
-		this.data_nascimento = data_nascimento;
+	public void setDataNascimento(Date dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
 
-	public Estado getEstado() {
-		return estado;
+	public boolean isAtivo() {
+		return ativo;
 	}
 
-	public void setEstado(Estado estado) {
-		this.estado = estado;
+	public void setAtivo(boolean ativo) {
+		this.ativo = ativo;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((idUsuario == null) ? 0 : idUsuario.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Usuario other = (Usuario) obj;
+		if (idUsuario == null) {
+			if (other.idUsuario != null)
+				return false;
+		} else if (!idUsuario.equals(other.idUsuario))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Usuario [idUsuario=" + idUsuario + ", nome=" + nome + ", email=" + email + ", senha=" + senha
+				+ ", dataNascimento=" + dataNascimento + ", ativo=" + ativo + "]";
 	}
 }
 

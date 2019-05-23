@@ -19,10 +19,10 @@ public class Program2CarregarDados {
 			
 			st = conn.createStatement();
 			
-			rs = st.executeQuery("select * from Departamento");
+			rs = st.executeQuery("select * from Estado_produto");
 			
 			while (rs.next()) {
-				System.out.println(rs.getInt("cod_depto")+ " - "+ rs.getString("nome") + " - "+ rs.getString("sigla"));
+				System.out.println(rs.getInt("id_estado_produto")+ " - "+ rs.getString("estado"));
 			}
 		}
 		catch (SQLException e) {
